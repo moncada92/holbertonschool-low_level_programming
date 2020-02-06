@@ -18,11 +18,6 @@ if (n < 9)
 putchar(44);
 putchar(32);
 }
-else
-{
-putchar(36);
-}
-
 n++;
 }
 putchar('\n');
