@@ -8,10 +8,11 @@
 void print_alphabet_x10(void)
 {
 	int timeprint = 0;
+	char first;
 
 	while (timeprint < 10)
 	{
-		char first = 'a';
+		first = 'a';
 
 		while (first <= 'z')
 		{
