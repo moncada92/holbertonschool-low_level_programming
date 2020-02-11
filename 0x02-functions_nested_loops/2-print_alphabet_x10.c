@@ -20,10 +20,7 @@ void print_alphabet_x10(void)
 			first++;
 		}
 
-		timeprint++;
-
 		_putchar('\n');
+		timeprint++;
 	}
-
-	_putchar('\n');
 }
