@@ -5,9 +5,9 @@
  */
 void times_table(void)
 {
-	int x = 0; 
-	int y; 
-	int z; 
+	int x = 0;
+	int y;
+	int z;
 
 	while (x < 10)
 	{
