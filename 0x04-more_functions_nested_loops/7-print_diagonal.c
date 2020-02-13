@@ -9,6 +9,7 @@
 void print_diagonal(int n)
 {
 	int m, o;
+
 	o = 0;
 
 	while (n > 0)
