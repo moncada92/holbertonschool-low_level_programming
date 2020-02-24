@@ -9,22 +9,12 @@
 
 char *_strchr(char *s, char c)
 {
-	int i, j = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s != c)
 	{
-		if (*s != c)
+		if (!*s++)
 		{
-			s++;
-		}
-		else
-		{
-			j++;
+			return (0);
 		}
 	}
-
-	if (j)
-		return (s);
-	else
-		return (0);
+	return (s);
 }
