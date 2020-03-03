@@ -17,12 +17,17 @@ char *_strdup(char *str)
 		i++;
 	}
 
-	if (i == 0)
+	if (str == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
 
-	char *dest = (char *)malloc(i * sizeof(char));
+	char *dest = (char *)malloc((i * sizeof(char)) + 1);
+
+	if(dest == NULL)
+	{
+		return (0);
+	}
 
 	for (j = 0; j <= i; j++)
 	{
@@ -30,5 +35,4 @@ char *_strdup(char *str)
 	}
 
 	return (dest);
-	free(dest);
 }
