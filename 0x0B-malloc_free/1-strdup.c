@@ -12,14 +12,14 @@ char *_strdup(char *str)
 {
 	unsigned int i = 0, j;
 
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-
 	if (str == NULL)
 	{
 		return (0);
+	}
+
+	while (str[i] != '\0')
+	{
+		i++;
 	}
 
 	char *dest = (char *)malloc((i * sizeof(char)) + 1);
@@ -29,9 +29,9 @@ char *_strdup(char *str)
 		return (0);
 	}
 
-	for (j = 0; j <= i; j++)
+	for (j = 0; j < i; j++)
 	{
-		dest[j] = str[j];
+		*(dest + j)  = *(str + j);
 	}
 
 	return (dest);
