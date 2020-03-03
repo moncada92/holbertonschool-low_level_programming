@@ -17,14 +17,14 @@ char *_strdup(char *str)
 		return (0);
 	}
 
-	while (str[i] != '\0')
+	while (*(str + i) != '\0')
 	{
 		i++;
 	}
 
 	char *dest = (char *)malloc((i * sizeof(char)) + 1);
 
-	if(dest == NULL)
+	if (dest == NULL)
 	{
 		return (0);
 	}
