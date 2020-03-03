@@ -3,13 +3,13 @@
 #include "holberton.h"
 
 /**
- * *_create_array - creates an array of chars, and initializes.
+ * *create_array - creates an array of chars, and initializes.
  * @size: size the string
  * @c: strings
  * Return: char value
  **/
 
-char *_create_array(unsigned int size, char c)
+char *create_array(unsigned int size, char c)
 {
 
 	unsigned int i;
