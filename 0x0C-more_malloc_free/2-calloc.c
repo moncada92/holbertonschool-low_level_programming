@@ -16,22 +16,24 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (nmemb == 0)
 	{
-		return (0);
+		return (NULL);
 	}
 	if (size == 0)
 	{
-		return (0);
+		return (NULL);
 	}
 
 	dest = (char *)malloc(nmemb * size);
 	if (dest == 0)
 	{
-		return (0);
+		return (NULL);
 	}
-	free(dest);
 	for (k = 0; k < size; k++)
 	{
-		*(dest + k)  = 0;
+		if (dest[k]  != 0)
+		{
+			dest[k] = 0;
+		}
 	}
 	return (dest);
 }
