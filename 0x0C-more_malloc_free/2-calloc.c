@@ -3,6 +3,26 @@
 #include "holberton.h"
 
 /**
+ * _memset - set values
+ * @p: pointer
+ * @v: value change
+ * @s: size
+ * Return: value char
+ */
+
+char *_memset(char *p, char v, unsigned int s)
+{
+	unsigned int i;
+
+	for (i = 0; i < s; i++)
+	{
+		*(p + i) = v;
+	}
+
+	return (p);
+}
+
+/**
  * *_calloc - create funcion caloc
  * @nmemb: characteres a copy
  * @size: characteres copy with n
@@ -11,21 +31,21 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int k;
-	char *dest;
+	void *dest;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
+
 	dest = malloc(nmemb * size);
+
 	if (dest == NULL)
 	{
 		return (NULL);
 	}
-	for (k = 0; k < size; k++)
-	{
-		*(dest + k) = '0';
-	}
+
+	_memset(dest, 0, nmemb * size);
+
 	return (dest);
 }
