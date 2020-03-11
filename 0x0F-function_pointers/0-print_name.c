@@ -3,12 +3,12 @@
 /**
  * print_name - create structure dog.
  * @name: pointer string
- * @age:  pointer string
+ * @f:  pointer string
  * Return: notghin is void
  **/
 
 void print_name(char *name, void (*f)(char *))
 {
-
-	 f(name);
+	if (name != NULL && f != NULL)
+		f(name);
 }
