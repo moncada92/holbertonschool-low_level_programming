@@ -5,6 +5,8 @@
 /**
  * main - check the code for Holberton School students.
  *
+ * @argc: number the arguments
+ * @argv: array thw argumnets
  * Return: Always 0.
  */
 
@@ -14,7 +16,7 @@ int main(int argc, char *argv[])
 
 	int (*p)(int, int);
 
-	if( argc < 4 || argc > 4)
+	if (argc < 4 || argc > 4)
 	{
 		printf("ERROR!!!\n");
 		exit(98);
