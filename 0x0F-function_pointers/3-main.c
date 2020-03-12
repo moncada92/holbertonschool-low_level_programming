@@ -12,11 +12,13 @@
 
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
+
+	printf("argc: %d\n", argc);
+	int num1, num2, operator, result;
 
 	int (*p)(int, int);
 
-	if (argc < 4 || argc > 4)
+	if (argc != 4)
 	{
 		printf("ERROR!!!\n");
 		exit(98);
@@ -34,9 +36,22 @@ int main(int argc, char *argv[])
 
 	p = get_op_func(argv[2]);
 
-	if (p == NULL)
+	operator = argv[2][0];
+
+	switch (operator)
 	{
-		printf("ERROR!!!\n");
+	case '+':
+		break;
+	case '-':
+		break;
+	case '*':
+		break;
+	case '/':
+		break;
+	case '%':
+		break;
+	default:
+		printf("Error\n");
 		exit(99);
 	}
 
