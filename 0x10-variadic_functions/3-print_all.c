@@ -72,10 +72,7 @@ void print_all(const char * const format, ...)
 
 	va_start(list, format);
 
-	if (format == NULL)
-		return;
-
-	while(format[i] != '\0')
+	while(format[i] != '\0' && format != NULL)
 	{
 		j = 0;
 		while (j < 4)
@@ -83,14 +80,14 @@ void print_all(const char * const format, ...)
 			if (ops[j].op[0] == format[i])
 			{
 				printf("%s", separator);
-				separator = ", ";
 				ops[j].f(list);
+				separator = ", ";
 				break;
 			}
 			j++;
 		}
 		i++;
 	}
-
+	printf("\n");
 	va_end(list);
 }
