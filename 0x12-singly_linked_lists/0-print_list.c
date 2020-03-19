@@ -1,27 +1,23 @@
 #include "lists.h"
 
 /**
- * print_list - print num the list structur pointer
+ * print_list - print the elements in a list.
+ *
  * @h: list
- * Return: return num list type size_t
+ * Description: print the elements of one list)?
+ * section header: the header of this function is lists.h
+ * Return: this return the num of the elements in the list
  **/
-
 size_t print_list(const list_t *h)
 {
+	int count;
 
-        int count = 0;
-
-	while (h)
+	for (count = 0; h ; count++)
 	{
-		if (h->str == NULL)
-		{
-			printf("[0] (nill)\n");
-		}
+		if (h->str == '\0')
+			printf("[0] (nil)\n");
 		else
-		{
-			printf("[%i] %s \n", h->len, h->str);
-		}
-		count++;
+			printf("[%i] %s\n", h->len, h->str);
 		h = h->next;
 	}
 

@@ -1,1 +1,1 @@
-<h1> Learn to Sinlgy linked lists </h1>
+<h1> Learn to lenguage C, Holberton School </h1>
