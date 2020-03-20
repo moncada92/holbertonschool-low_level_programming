@@ -13,6 +13,11 @@ list_t *add_node(list_t **head, const char *str)
 	list_t *copy;
 	int i;
 
+	if (head == NULL || str == NULL)
+	{
+		return (NULL);
+	}
+
 	for (i = 0; str[i]; i++)
 		;
 
