@@ -21,12 +21,12 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	get_nd = head;
 
-	for (get_n = 0; get_n <= index; get_n++)
+	for (get_n = 0; get_n; get_n++)
 	{
 
 		if (get_n == index)
 		{
-			break;
+			return (get_nd);
 		}
 
 		get_nd = get_nd->next;
