@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * pop_listint - remove one element list
+ * get_nodeint_at_index - select element list
  * @head: list linked
  * @index: the index list
  * Return: list select
@@ -24,7 +24,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	for (get_n = 0; get_n <= index; get_n++)
 	{
 
-		if( get_n == index)
+		if (get_n == index)
 		{
 			break;
 		}
