@@ -8,25 +8,19 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *new, *aux;
+	listint_t *tmp, *actual;
 
-	aux = *head;
-
-	if (head == NULL)
+	if (*head == NULL)
 		return (NULL);
 
-	new = malloc(sizeof(listint_t));
+	actual = *head;
 
-	if (new == NULL)
-		return (NULL);
-
-	while (aux->next)
+	while (actual->next)
 	{
-		new = aux->next;
-		aux->next = new->next;
-		new->next = *head;
-		*head = new;
+		tmp = actual->next;
+		actual->next = tmp->next;
+		tmp->next = *head;
+		*head = tmp;
 	}
-
 	return (*head);
 }
