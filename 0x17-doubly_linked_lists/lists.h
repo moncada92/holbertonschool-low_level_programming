@@ -1,9 +1,12 @@
-#ifndef LISTS_H
-#define LISTS_H
+#ifndef DOUBLE_LINKED
+#define DOUBLE_LINKED
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
+
+#define EXIT_SUCCESS 0
+#define EXIT_FAILURE 1
 
 /**
  * struct dlistint_s - doubly linked list
