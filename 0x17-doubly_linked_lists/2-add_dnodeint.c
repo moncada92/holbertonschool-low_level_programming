@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - print the elements in a doble linked list.
+ * add_dnodeint - add node head double linked list.
  *
- * @h: list
- * Description: print the elements of one list)?
- * section header: the header of this function is lists.h
+ * @head: list
+ * @n: valie the node
+ *
  * Return: this return the num of the elements in the list
  **/
 
@@ -22,7 +22,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	new->next = *head;
 	new->prev = NULL;
 
-	if(*head != NULL)
+	if (*head != NULL)
 	{
 		(*head)->prev = new;
 	}
