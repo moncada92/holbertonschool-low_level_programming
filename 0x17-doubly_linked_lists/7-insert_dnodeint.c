@@ -10,32 +10,24 @@
  * Return: return node  in the list
  **/
 
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new = NULL;
-	dlistint_t *tmp = *head;
+	dlistint_t *tmp = *h;
+	dlistint_t *new;
+	unsigned int i = 1;
 
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
-	if (tmp == NULL)
+	new->n = n;
+	while (idx > i)
 	{
-		new->next = NULL;
-		new->prev = NULL;
-		new->n = n;
-		tmp = new;
-		*head = new;
+		tmp = tmp->next;
+		i++;
 	}
-	else
-	{
-		while (tmp->next != NULL)
-		{
-			tmp = tmp->next;
-		}
-		new->prev = tmp;
-		tmp->next = new;
-		new->next = NULL;
-		new->n = n;
-	}
-	return (new);
+	new->next = tmp->next;
+	new->prev = tmp;
+	tmp->next->prev = new;
+	tmp->next = new;
+	return (tmp);
 }
