@@ -1,51 +1,42 @@
 #include "lists.h"
 
 /**
- * sum_dlistint - function that returns the sum of all the data (n) of a
- * dlistint_t linked list.
- * @head: input of a list.
- * Return: the sum of the list
+ * delete_dnodeint_at_index - delete a node in a index
+ * @head: the list to delete the node
+ * @index: the index to delete
+ * Return: 1 or -1
  */
-
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *tmp = *head;
-	dlistint_t *p = NULL;
-	dlistint_t *delete = NULL;
-	unsigned int i = 1;
+	dlistint_t *actual;
+	size_t size;
 
-
-	while (index > i)
+	actual = *head;
+	size = 0;
+	if (*head == NULL)
+		return (-1);
+	while (actual != NULL)
 	{
-		tmp = tmp->next;
-		i++;
+		size++;
+		actual = actual->next;
 	}
-	if (tmp == NULL)
-		return(-1);
-	if (tmp == *head)
+	if (size < index + 1)
+		return (-1);
+	actual = *head;
+	if (index == 0)
 	{
-		delete = tmp;
-		tmp = tmp->next;
-		*head = tmp;
-		if (tmp != NULL)
-			tmp->prev = NULL;
+		*head = actual->next;
+		if (actual->next)
+			actual->next->prev = NULL;
+		actual->next = NULL;
+		free(actual);
+		return (1);
 	}
-	else if (tmp->next->next == NULL)
-	{
-		tmp->next->prev = NULL;
-		delete = tmp->next;
-		tmp->next = NULL;
-
-	}
-	else
-	{
-		delete = tmp->next;
-		p = tmp->next->next;
-		tmp->next->next = NULL;
-		tmp->next->prev = NULL;
-		tmp->next = p;
-		p->prev = tmp;
-	}
-	free(delete);
-	return(1);
+	while (index--)
+		actual = actual->next;
+	actual->prev->next = actual->next;
+	if (actual->next)
+		actual->next->prev = actual->prev;
+	free(actual);
+	return (1);
 }
