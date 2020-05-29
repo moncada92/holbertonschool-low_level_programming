@@ -29,6 +29,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	}
 
+	t_hsh->size = size;
+
 	/*set each to null */
 	for (; i < size; i++)
 	{
