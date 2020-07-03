@@ -1,0 +1,14 @@
+#this programa all
+CC = gcc
+SRC = main.c holberton.c
+SRC = main.o holberton.o
+NAME = holberton
+all: programa
+programa: $(SRC)
+	$(CC) $(SRC) -o holberton
+
+main.o: main.c m.h
+	$(CC) -c -o main.o main.c
+
+holberton.o: holberton.c m.h
+	$(CC) -c -o holberton.o holberton.c
