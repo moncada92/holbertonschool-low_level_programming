@@ -1,0 +1,6 @@
+#this programa all
+CC = gcc
+SRC = main.c holberton.c
+all: programa
+programa: $(SRC)
+	$(CC) $(SRC) -o holberton
