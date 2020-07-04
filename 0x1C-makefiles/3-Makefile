@@ -1,16 +1,16 @@
 #this programa all
-CC: gcc
-SRC: main.c holberton.c
-OBJ: $(SRC:.c=.o)
-NAME: holberton
-RM: rm
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+RM = rm
 
 all: programa
 
 programa: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o : %.c:
+%.o: %.c
 	$(CC) -c $< -o $@ 
 
 clean:
@@ -20,7 +20,7 @@ oclean:
 	$(RM) -f $(OBJ)
 
 fclean:
-	$(RM) -f  *.~ $(NAME) 
+	$(RM) -f  *~ $(NAME) 
 	$(RM) -f $(OBJ)
 
 re: oclean all
