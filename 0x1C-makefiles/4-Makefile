@@ -1,0 +1,27 @@
+#this programa all
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+RM = rm
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+all: programa
+
+programa: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@ 
+
+clean:
+	$(RM) -f *~ $(NAME)
+
+oclean:
+	$(RM) -f $(OBJ)
+
+fclean:
+	$(RM) -f  *~ $(NAME) 
+	$(RM) -f $(OBJ)
+
+re: oclean all
