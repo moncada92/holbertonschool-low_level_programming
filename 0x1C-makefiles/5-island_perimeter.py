@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+""" PERIMETER OF A ISLAND"""
 
 
 def island_perimeter(grid):
+    """
+    function def island_perimeter(grid):
+    that returns the perimeter of the island described in grid
+    """
     parameter = 0
 
     for i in range(len(grid)):
